@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>Ледовая арена | Бронирование</title>
+  </head>
+  <body>
+    <div
+      class="w-screen h-screen flex flex-col justify-between text-center p-[5vh]"
+    >
+      <div class="font-bold">
+        <div class="text-4xl">Ледовая арена в ЛОТОС PLAZA</div>
+        <div class="text-2xl">Бронирование времени</div>
+      </div>
+
+      <div>
+        <div class="mb-[5vw]">
+          <span class="font-bold text-2xl">Мы работаем:</span>
+          <div class="mt-[0.25vw] flex flex-col">
+            <span>Понедельник: 10:00 - 20:00</span>
+            <span>Вторник: 10:00 - 20:00</span>
+            <span>Среда: 10:00 - 20:00</span>
+            <span>Четверг: 10:00 - 20:00</span>
+            <span>Пятница: 10:00 - 20:00</span>
+            <span class="text-red-600">Суббота: 12:00 - 18:00</span>
+            <span class="text-red-600">Воскресенье: 12:00 - 17:00</span>
+          </div>
+        </div>
+
+        <div id="form">
+          <div>
+            <input
+              class="placeholder:text-black border-2 placeholder:text-center text-center border-black rounded-lg"
+              placeholder="Имя"
+              id="name"
+              type="text"
+            />
+            <input
+              class="placeholder:text-black border-2 placeholder:text-center text-center border-black rounded-lg"
+              placeholder="Фамилия"
+              id="surname"
+              type="text"
+            />
+          </div>
+
+          <div class="mt-[0.5vw]">
+            <select
+              class="border-2 placeholder:text-center text-center border-black rounded-lg"
+              id="date"
+            >
+              <option disabled>Дата</option>
+              <option selected value="1">1</option>
+              <option selected value="2">2</option>
+              <option selected value="3">3</option>
+              <option selected value="4">4</option>
+              <option selected value="5">5</option>
+              <option selected value="6">6</option>
+              <option selected value="7">7</option>
+              <option selected value="8">8</option>
+              <option selected value="9">9</option>
+              <option selected value="10">10</option>
+              <option selected value="11">11</option>
+              <option selected value="12">12</option>
+              <option selected value="13">13</option>
+              <option selected value="14">14</option>
+              <option selected value="15">15</option>
+              <option selected value="16">16</option>
+              <option selected value="17">17</option>
+              <option selected value="18">18</option>
+              <option selected value="19">19</option>
+              <option selected value="20">20</option>
+              <option selected value="21">21</option>
+              <option selected value="22">22</option>
+              <option selected value="23">23</option>
+              <option selected value="24">24</option>
+              <option selected value="25">25</option>
+              <option selected value="26">26</option>
+              <option selected value="27">27</option>
+              <option selected value="28">28</option>
+              <option selected value="29">29</option>
+              <option selected value="30">30</option>
+              <option selected value="31">31</option>
+            </select>
+
+            <select
+              class="border-2 placeholder:text-center text-center border-black rounded-lg"
+              id="mouth"
+            >
+              <option disabled>Месяц</option>
+              <option selected value="" id="firstMouth"></option>
+              <option value="" id="secondMouth"></option>
+            </select>
+
+            2023
+          </div>
+
+          <div class="mt-[0.5vw]">
+            <input
+              class="placeholder:text-black border-2 placeholder:text-center text-center border-black rounded-lg"
+              placeholder="Количество человек"
+              id="count"
+              type="number"
+            />
+          </div>
+
+          <button
+            class="mt-[0.5vw] bg-black text-white px-[1vw] py-[0.25vw] rounded-xl"
+            onclick="bookArena()"
+          >
+            Забронировать
+          </button>
+        </div>
+
+        <div id="success">
+          Вы забронировали арену на
+          <span id="sCount"></span>
+          человек.
+
+          <br />
+
+          Дата:
+          <span id="sDate"></span>
+
+          <br />
+
+          ФИ:
+          <span id="sName"></span>
+        </div>
+
+        <div id="error" class="text-red-600 mt-[1vw]">
+          Вы что-то неверно указали. Перепроверте форму, пожалуйста!
+        </div>
+      </div>
+
+      <div class="font-bold text-gray-700 text-xl">
+        © ЛОТОС PLAZA | Ледовая арена - Бронирование
+      </div>
+    </div>
+
+    <script>
+      const form = document.getElementById("form");
+      const success = document.getElementById("success");
+      const error = document.getElementById("error");
+
+      success.hidden = true;
+      error.hidden = true;
+
+      var now = new Date();
+
+      var mouth = now.getMonth();
+      var mouths = [
+        "Январь",
+        "Февраль",
+        "Март",
+        "Апрель",
+        "Май",
+        "Июнь",
+        "Июль",
+        "Август",
+        "Сентябрь",
+        "Ноябрь",
+        "Декабрь",
+      ];
+
+      const f = document.getElementById("firstMouth");
+      const s = document.getElementById("secondMouth");
+
+      f.innerHTML = mouths[mouth];
+      s.innerHTML = mouths[mouth + 1];
+
+      document.getElementById("firstMouth").value = mouths[mouth];
+      document.getElementById("secondMouth").value = mouths[mouth + 1];
+
+      function bookArena() {
+        const name = document.getElementById("name").value;
+        const surname = document.getElementById("surname").value;
+        const date = document.getElementById("date").value;
+        const mouth = document.getElementById("mouth").value;
+        const count = document.getElementById("count").value;
+
+        const dateS = document.getElementById("sDate");
+        const nameS = document.getElementById("sName");
+        const countS = document.getElementById("sCount");
+
+        if (name != "" && surname != "" && count > 0) {
+          dateS.innerHTML = String(mouth) + ", " + String(date);
+          nameS.innerHTML = name + " " + surname;
+          countS.innerHTML = count;
+
+          form.hidden = true;
+          success.hidden = false;
+        } else {
+          error.hidden = false;
+        }
+      }
+    </script>
+  </body>
+</html>

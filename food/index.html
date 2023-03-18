@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>Ресторан по доставке еды</title>
+  </head>
+  <body>
+    <div class="container mx-auto px-4 py-10">
+      <h1 class="text-2xl font-bold mb-4">Ресторан</h1>
+      <table class="table-auto">
+        <tr>
+          <td class="px-4 py-2">Выберите товар:</td>
+          <td class="px-4 py-2">
+            <select
+              id="foodMenu"
+              class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal"
+            >
+              <option value="-1" disabled>Выберите блюдо</option>
+              <option value="0">Бургер</option>
+              <option value="1">Пицца</option>
+              <option value="2">Салат</option>
+              <option value="3">Сендвич</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td class="px-4 py-2">Адрес доставки:</td>
+          <td class="px-4 py-2">
+            <input
+              type="text"
+              id="address"
+              class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal"
+              placeholder="Введите свой адрес"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" class="px-4 py-2">
+            <input
+              type="button"
+              value="Place order"
+              onclick="placeOrder()"
+              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            />
+          </td>
+        </tr>
+      </table>
+      <div id="order" class="mt-4"></div>
+    </div>
+    <script>
+      function placeOrder() {
+        var selected_box = document.getElementById("foodMenu").value;
+        var address_box = document.getElementById("address");
+        var address = address_box.value;
+
+        if (address == "") {
+          alert("Введите адрес");
+        } else {
+          var foodItems = ["Бургер", "Пицца", "Салат", "Сендвич"];
+          var food = foodItems[selected_box];
+
+          var orderDetails =
+            "Ваш заказ: " + food + "<br>Адрес доставки: " + address;
+
+          document.getElementById("order").innerHTML = orderDetails;
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>Switch | Вячеслав</title>
+  </head>
+  <body>
+    <div class="container mx-auto p-4">
+      <h1 class="text-3xl md:text-5xl font-bold mb-4">Выберите действие</h1>
+      <select id="selectAction" class="p-2 mb-4">
+        <option value="">Выберите действие</option>
+        <option value="add">Сложить</option>
+        <option value="subtract">Вычесть</option>
+        <option value="multiply">Умножить</option>
+        <option value="divide">Разделить</option>
+      </select>
+      <div id="result" class="hidden">
+        <h2 class="text-xl md:text-2xl font-bold mb-2">Результат</h2>
+        <p id="resultValue" class="text-lg md:text-xl"></p>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>

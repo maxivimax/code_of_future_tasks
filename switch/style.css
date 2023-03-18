@@ -1,0 +1,11 @@
+.container {
+    max-width: 800px;
+}
+
+select {
+    font-size: 1.125rem;
+}
+
+.hidden {
+    display: none;
+}

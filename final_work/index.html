@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>Обо мне</title>
+  </head>
+  <body class="flex flex-col justify-center items-center h-screen w-screen">
+    <div
+      class="container mx-auto p-4 flex flex-col justify-center items-center"
+    >
+      <h1 class="text-3xl font-bold mb-4">Меня зовут Вячеслав</h1>
+      <p class="mb-4">
+        Я хорошо разбираюсь в различных инструментах для дизайна, таких как
+        Figma и Photoshop, также я умею работать с After Effects, Premiere Pro,
+        Illustrator, Blender. Имею опыт работы со многими технологиями, такими
+        как NodeJS, Python, HTML, CSS, Git, с фреймворками Vue и React и чистым
+        HTML.
+      </p>
+
+      <div class="flex mt-[3vh]">
+        <button
+          id="increaseFontSize"
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
+        >
+          Увеличить размер шрифта
+        </button>
+        <button
+          id="decreaseFontSize"
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        >
+          Уменьшить размер шрифта
+        </button>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>

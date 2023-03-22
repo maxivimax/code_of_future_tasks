@@ -9,21 +9,19 @@
   </head>
   <body class="h-screen flex flex-col justify-between">
     <!-- Шапка сайта -->
-    <header class="py-4">
-      <div class="container mx-auto flex justify-between items-center">
-        <h1 class="text-2xl">Заголовок сайта</h1>
-        <nav>
-          <ul class="flex space-x-4">
-            <li><a href="#" class="hover:text-gray-600">Главная</a></li>
-            <li><a href="#" class="hover:text-gray-600">О нас</a></li>
-            <li><a href="#" class="hover:text-gray-600">Контакты</a></li>
-          </ul>
-        </nav>
-      </div>
+    <header class="w-screen px-10 flex justify-between items-center py-4">
+      <h1 class="text-2xl">Заголовок сайта</h1>
+      <nav>
+        <ul class="flex space-x-4">
+          <li><a href="#" class="hover:text-gray-600">Главная</a></li>
+          <li><a href="#" class="hover:text-gray-600">О нас</a></li>
+          <li><a href="#" class="hover:text-gray-600">Контакты</a></li>
+        </ul>
+      </nav>
     </header>
 
     <!-- Контент страницы -->
-    <main class="container mx-auto py-8">
+    <main class="mx-auto py-8 max-w-[80vw] lg:max-w-[50vw]">
       <h2 class="text-3xl font-bold mb-4">Приветствую вас на своем сайте!</h2>
       <p class="text-lg mb-4">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod
@@ -46,9 +44,7 @@
 
     <!-- Футер сайта -->
     <footer class="py-4">
-      <div class="container mx-auto text-center">
-        &copy; 2023 Заголовок сайта
-      </div>
+      <div class="mx-auto text-center">&copy; 2023 Заголовок сайта</div>
     </footer>
   </body>
 </html>
